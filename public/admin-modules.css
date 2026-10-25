@@ -1,33 +1,8 @@
-/* Consistent controls for Package 3 admin screens */
-.admin-modules-placeholder{display:none}
-#pageContent .admin-tabs button,#pageContent button.admin-inline,.admin-actions button,.admin-toolbar button{font-family:'DM Sans',sans-serif;cursor:pointer;transition:background .15s,border-color .15s,color .15s,box-shadow .15s}
-#pageContent .admin-tabs button{border:1px solid #dce5f0;background:#fff;border-radius:9px;padding:10px 14px;color:#586a81;font-size:12px;font-weight:700;line-height:1.3}
-#pageContent .admin-tabs button:hover{background:#f3f7ff;border-color:#c6d8fb;color:#245bc3}
-#pageContent .admin-tabs button.active{background:#eaf1ff;border-color:#cbdcff;color:#245bc3}
-#pageContent button.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:38px;padding:10px 14px;border:1px solid #dbe4ef;border-radius:9px;background:#fff;color:#40536b;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;line-height:1.3;box-shadow:0 1px 2px #1d35570a}
-#pageContent button.btn:hover{background:#f5f8fc;border-color:#bfcfe3;color:#1f3f70}
-#pageContent button.btn.primary{background:#285fc7;border-color:#285fc7;color:#fff;box-shadow:0 2px 5px #285fc71c}
-#pageContent button.btn.primary:hover{background:#1e4fae;border-color:#1e4fae;color:#fff}
-#pageContent button.btn.soft{background:#eaf1ff;border-color:#d9e5ff;color:#285fc7}
-#pageContent button.admin-inline{border:1px solid transparent;background:transparent;color:#285fc7;border-radius:7px;padding:6px 8px;font-size:11px;font-weight:800;line-height:1.4}
-#pageContent button.admin-inline:hover{background:#eaf1ff;border-color:#d9e5ff;color:#1e4fae}
-#pageContent input:not([type=checkbox]),#pageContent select,#pageContent textarea{font-family:'DM Sans',sans-serif;font-size:12px;color:#1c2c43;outline-color:#9dbcf5}
-#pageContent input[type=checkbox]{accent-color:#285fc7;width:15px;height:15px}
-#pageContent .admin-field input,#pageContent .admin-field select,#pageContent .admin-field textarea{width:100%;min-height:39px;padding:10px 11px;border:1px solid #dbe4ef;border-radius:8px;background:#fff;box-shadow:inset 0 1px 1px #162b4605}
-#pageContent .admin-field textarea{min-height:95px}
-#pageContent .admin-field input:focus,#pageContent .admin-field select:focus,#pageContent .admin-field textarea:focus{border-color:#83a9f3;box-shadow:0 0 0 3px #dce9ff}
-#pageContent .search{border:1px solid #dbe4ef;border-radius:9px;padding:10px 12px;min-height:38px;background:#fff}
-#pageContent .search:focus{border-color:#83a9f3;box-shadow:0 0 0 3px #dce9ff;outline:none}
-#modalRoot .modal{font-family:'DM Sans',sans-serif;color:#1c2c43;border:1px solid #e5ebf3}
-#modalRoot .modal h2{font-family:'Manrope',sans-serif;color:#18283e}
-#modalRoot .modal .btn{min-height:38px;padding:10px 14px;border:1px solid #dbe4ef;border-radius:9px;background:#fff;color:#40536b;font-size:12px;font-weight:700}
-#modalRoot .modal .btn:hover{background:#f5f8fc}
-#modalRoot .modal .btn.primary{background:#285fc7;border-color:#285fc7;color:#fff}
-#modalRoot .modal .btn.primary:hover{background:#1e4fae}
-#modalRoot .modal .admin-field input,#modalRoot .modal .admin-field select,#modalRoot .modal .admin-field textarea{box-sizing:border-box;width:100%;min-height:39px;padding:10px 11px;border:1px solid #dbe4ef;border-radius:8px;background:#fff;font:12px 'DM Sans',sans-serif;color:#1c2c43}
-#modalRoot .modal .admin-field textarea{min-height:95px}
-#modalRoot .modal .admin-field input:focus,#modalRoot .modal .admin-field select:focus,#modalRoot .modal .admin-field textarea:focus{outline:none;border-color:#83a9f3;box-shadow:0 0 0 3px #dce9ff}
-#modalRoot .modal .admin-form-grid{gap:14px}
-#modalRoot .modal .modal-actions{display:flex;justify-content:flex-end;gap:9px;flex-wrap:wrap}
-#pageContent button:focus-visible,#modalRoot button:focus-visible{outline:3px solid #c6d9ff;outline-offset:2px}
-@media(max-width:760px){#pageContent .admin-tabs button{padding:9px 11px}#pageContent button.btn{min-height:40px}#modalRoot .modal{max-height:calc(100dvh - 36px);overflow:auto;padding:18px}#modalRoot .modal .modal-actions .btn{flex:1}}
+/* Keep admin controls scoped so they cannot interfere with existing dashboard widgets */
+.nav-divider{margin:10px 9px 4px;padding-top:10px;border-top:1px solid #e8edf3;color:#8b98a9;font-size:9px;font-weight:800;letter-spacing:.8px;line-height:1.4;white-space:normal}
+#pageContent .admin-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:18px}
+#pageContent .admin-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,1fr);gap:16px;margin-bottom:17px}
+#pageContent .admin-card{min-width:0;overflow-wrap:anywhere}
+#pageContent .admin-toolbar .search{min-width:180px;max-width:100%}
+@media(max-width:1150px){#pageContent .admin-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}#pageContent .admin-layout{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:760px){#pageContent .admin-kpis{gap:9px}#pageContent .admin-layout{gap:12px}#pageContent .admin-toolbar .search{min-width:100%}}

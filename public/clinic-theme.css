@@ -1,33 +1,12 @@
-/* ClinicFlow-inspired visual system for GlowSuite */
-:root{--ink:#18283e;--muted:#7b899b;--line:#e8edf3;--bg:#f5f8fc;--rose:#2563eb;--rose-dark:#1d4ed8;--rose-light:#eaf1ff;--green:#13865c;--shadow:0 8px 26px rgba(25,46,77,.045)}
-body{background:#f5f8fc;color:#18283e;font-family:'DM Sans',sans-serif}
-.sidebar,.topbar,.panel,.metric-card,.modal{background:#fff;border-color:#e8edf3}
-.sidebar{box-shadow:none}
-.brand-icon{background:linear-gradient(135deg,#2563eb,#12a89a);color:#fff;box-shadow:0 5px 12px #2563eb30}
-.nav-link{color:#64748b}
-.nav-link>span{color:#94a3b8}
-.nav-link.active{background:#eaf1ff;color:#2563eb}
-.nav-link.active>span{color:#2563eb}
-.owner-report-link{background:#edf5ff;border-color:#dbe9ff;color:#2563eb}
-.profile{border-color:#e8edf3}
-.demo-banner{background:#edf5ff;border-color:#dbe9ff;color:#527093}
-.demo-banner span,.eyebrow{color:#2563eb}
-.btn{border-color:#e8edf3;color:#234568}
-.btn.primary{background:#2563eb;border-color:#2563eb;color:#fff;box-shadow:0 5px 12px #2563eb24}
-.btn.soft{background:#eaf1ff;border-color:#eaf1ff;color:#2563eb}
-.metric-icon,.service-thumb,.time-pill{background:#eaf1ff;color:#2563eb}
-.panel,.metric-card{box-shadow:0 8px 26px rgba(25,46,77,.045)}
-.status{background:#e8f8ef;color:#19845c}
-.status.pending{background:#fff4df;color:#a86c13}
-.status.busy{background:#eaf1ff;color:#376bd0}
-.chart{background:repeating-linear-gradient(to bottom,transparent 0,transparent 44px,#eef2f7 45px)}
-.bar{background:#c6d9ff}.bar.dark{background:#2563eb}
-.legend i{background:#c6d9ff}.legend i.dark{background:#2563eb}
-.person-dot,.avatar{background:#eaf1ff;color:#426fc5}
-.progress{background:#edf1f6}.progress span{background:#2563eb}
-.section-tabs .tab.active,.tab.active{background:#eaf1ff;color:#2563eb;border-color:#d6e3ff}
-.search,.field input,.field select{border-color:#dfe6ee}
-.search:focus,.field input:focus,.field select:focus{border-color:#8cb0ff;box-shadow:0 0 0 3px #2563eb12;outline:none}
-.toast{background:#173451}
-.report-phone-cta{border-color:#dbe9ff;color:#2563eb}
-.sidebar{width:232px;padding:20px 12px}.brand{gap:9px;padding:0 8px 20px}.brand-icon{width:36px;height:36px;border-radius:11px;font-size:22px}.brand b{font-size:19px}.workspace-label{padding:3px 10px 9px;font-size:9px}.sidebar nav{gap:3px}.nav-link{gap:10px;padding:9px 10px;border-radius:8px;font-size:13px;line-height:1.25}.nav-link>span{font-size:17px;width:20px}.nav-link i{font-size:10px;padding:2px 6px}.owner-report-link{gap:8px;padding:10px;border-radius:10px;margin-bottom:12px}.owner-report-link b{font-size:11px}.owner-report-link small{font-size:10px}.profile{padding:13px 3px 0;gap:8px}.avatar{width:32px;height:32px}.profile b{font-size:11px}.profile small{font-size:10px}.main{margin-left:232px}@media(max-width:1150px){.sidebar{width:216px}.main{margin-left:216px}}@media(max-width:760px){.sidebar{width:260px;padding:20px 14px}.main{margin-left:0}.sidebar.open{box-shadow:0 0 0 100vmax #18283e24}}
+/* Layout stability fix: keep the compact sidebar scrollable without squeezing page content */
+.sidebar{width:232px;padding:18px 12px;overflow:hidden}
+.sidebar nav{display:flex;flex-direction:column;gap:3px;min-height:0;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;flex:1;padding-right:2px}
+.sidebar nav .nav-link{width:100%;flex:0 0 auto;min-height:35px;white-space:normal}
+.sidebar nav .nav-divider{flex:0 0 auto}
+.sidebar-bottom{flex:0 0 auto;padding-top:10px;background:#fff}
+.main{min-width:0;margin-left:232px}
+.page-wrap{min-width:0}
+#pageContent{min-width:0}
+.metric-grid,.dashboard-grid,.lower-grid,.admin-kpis,.admin-layout{min-width:0}
+@media(max-width:1150px){.sidebar{width:216px}.main{margin-left:216px}}
+@media(max-width:760px){.sidebar{width:270px;max-width:86vw;overflow-y:auto;z-index:40}.sidebar nav{overflow:visible;flex:0 0 auto}.sidebar-bottom{margin-top:auto}.main{margin-left:0}.topbar{z-index:20}}
