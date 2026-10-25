@@ -4,5 +4,22 @@
 #pageContent .admin-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,1fr);gap:16px;margin-bottom:17px}
 #pageContent .admin-card{min-width:0;overflow-wrap:anywhere}
 #pageContent .admin-toolbar .search{min-width:180px;max-width:100%}
+/* Staff and admin module controls */
+#pageContent .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:38px;padding:10px 14px;border:1px solid #e8dfe2;border-radius:9px;background:#fff;color:#5b525b;font:700 12px 'DM Sans',sans-serif;text-decoration:none;line-height:1.2;white-space:nowrap;transition:background .15s,border-color .15s,transform .15s}
+#pageContent .btn:hover{background:#fbf5f6;border-color:#d9bdc5}
+#pageContent .btn.primary{background:#8f4e62;border-color:#8f4e62;color:#fff}
+#pageContent .btn.primary:hover{background:#773d50;border-color:#773d50}
+#pageContent .admin-tabs{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 17px}
+#pageContent .admin-tabs button{appearance:none;display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:9px 14px;border:1px solid #eee7e8;border-radius:9px;background:#fff;color:#817982;font:700 12px 'DM Sans',sans-serif;cursor:pointer}
+#pageContent .admin-tabs button:hover{border-color:#d9bdc5;color:#8f4e62}
+#pageContent .admin-tabs button.active{background:#f8e9ed;border-color:#f1dce2;color:#8f4e62}
+#pageContent .admin-inline{appearance:none;display:inline-flex;align-items:center;justify-content:center;min-height:30px;padding:6px 10px;border:1px solid #eadde1;border-radius:7px;background:#fff;color:#8f4e62;font:700 11px 'DM Sans',sans-serif;line-height:1.2;cursor:pointer;white-space:nowrap}
+#pageContent .admin-inline:hover{background:#f8e9ed;border-color:#d9bdc5}
+#pageContent .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+#pageContent .toolbar .search{min-width:180px;flex:1;border:1px solid #eee7e8;border-radius:9px;padding:11px 12px;background:#fff;outline-color:#d9aab7;color:#29252b}
+#pageContent .toolbar .search:focus{border-color:#d9aab7;box-shadow:0 0 0 3px #f8e9ed}
+#pageContent .panel{background:#fff;border:1px solid #eee7e8;border-radius:14px;padding:19px;min-width:0}
+#pageContent .table-wrap{width:100%;overflow:auto}
+#pageContent .table-wrap table{width:100%;border-collapse:collapse}
 @media(max-width:1150px){#pageContent .admin-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}#pageContent .admin-layout{grid-template-columns:minmax(0,1fr)}}
-@media(max-width:760px){#pageContent .admin-kpis{gap:9px}#pageContent .admin-layout{gap:12px}#pageContent .admin-toolbar .search{min-width:100%}}
+@media(max-width:760px){#pageContent .admin-kpis{gap:9px}#pageContent .admin-layout{gap:12px}#pageContent .admin-toolbar .search,#pageContent .toolbar .search{min-width:100%}#pageContent .panel{padding:14px}#pageContent .toolbar>.btn{flex:1}}
