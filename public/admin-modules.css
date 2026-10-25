@@ -1,36 +1,15 @@
-/* Keep admin controls scoped so they cannot interfere with existing dashboard widgets */
-.nav-divider{margin:10px 9px 4px;padding-top:10px;border-top:1px solid #e8edf3;color:#8b98a9;font-size:9px;font-weight:800;letter-spacing:.8px;line-height:1.4;white-space:normal}
-#pageContent .admin-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:18px}
-#pageContent .admin-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,1fr);gap:16px;margin-bottom:17px}
-#pageContent .admin-card{min-width:0;overflow-wrap:anywhere;background:#fff;border:1px solid #eee7e8;border-radius:14px;padding:19px;box-shadow:0 2px 8px rgba(41,37,43,.025)}
-#pageContent .admin-kpis .admin-card{min-height:132px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:9px;transition:transform .15s,box-shadow .15s,border-color .15s}
-#pageContent .admin-kpis .admin-card:hover{transform:translateY(-2px);border-color:#e6d2d8;box-shadow:0 7px 20px rgba(74,42,54,.06)}
-#pageContent .admin-card>small{display:block;color:#817982;font-size:12px;font-weight:600;line-height:1.45}
-#pageContent .admin-card>strong{display:block;color:#29252b;font:800 25px/1.2 Manrope,sans-serif;letter-spacing:-.7px;overflow-wrap:anywhere}
-#pageContent .admin-card>p{margin:0;color:#817982;font-size:11px;line-height:1.5}
-#pageContent .admin-card h2{margin:0 0 7px;color:#29252b;font:800 15px/1.4 Manrope,sans-serif}
-#pageContent .admin-card .sub{margin:0 0 15px;color:#817982;font-size:11px;line-height:1.5}
-#pageContent .admin-card .table-wrap{margin-top:12px}
-#pageContent .admin-toolbar .search{min-width:180px;max-width:100%}
-#pageContent .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:38px;padding:10px 14px;border:1px solid #e8dfe2;border-radius:9px;background:#fff;color:#5b525b;font:700 12px 'DM Sans',sans-serif;text-decoration:none;line-height:1.2;white-space:nowrap;transition:background .15s,border-color .15s,transform .15s}
-#pageContent .btn:hover{background:#fbf5f6;border-color:#d9bdc5}
-#pageContent .btn.primary{background:#8f4e62;border-color:#8f4e62;color:#fff}
-#pageContent .btn.primary:hover{background:#773d50;border-color:#773d50}
-#pageContent .admin-tabs{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 17px}
-#pageContent .admin-tabs button{appearance:none;display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:9px 14px;border:1px solid #eee7e8;border-radius:9px;background:#fff;color:#817982;font:700 12px 'DM Sans',sans-serif;cursor:pointer}
-#pageContent .admin-tabs button:hover{border-color:#d9bdc5;color:#8f4e62}
-#pageContent .admin-tabs button.active{background:#f8e9ed;border-color:#f1dce2;color:#8f4e62}
-#pageContent .admin-inline{appearance:none;display:inline-flex;align-items:center;justify-content:center;min-height:30px;padding:6px 10px;border:1px solid #eadde1;border-radius:7px;background:#fff;color:#8f4e62;font:700 11px 'DM Sans',sans-serif;line-height:1.2;cursor:pointer;white-space:nowrap}
-#pageContent .admin-inline:hover{background:#f8e9ed;border-color:#d9bdc5}
-#pageContent .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
-#pageContent .toolbar .search{min-width:180px;flex:1;border:1px solid #eee7e8;border-radius:9px;padding:11px 12px;background:#fff;outline-color:#d9aab7;color:#29252b}
-#pageContent .toolbar .search:focus{border-color:#d9aab7;box-shadow:0 0 0 3px #f8e9ed}
-#pageContent .panel{background:#fff;border:1px solid #eee7e8;border-radius:14px;padding:19px;min-width:0}
-#pageContent .table-wrap{width:100%;overflow:auto}
-#pageContent .table-wrap table{width:100%;border-collapse:collapse}
-#pageContent .admin-list{display:grid;gap:0;margin-top:8px}
-#pageContent .admin-list-row{display:flex;align-items:center;gap:12px;justify-content:space-between;padding:12px 0;border-bottom:1px solid #f4eff0;color:#5b525b;font-size:12px}
-#pageContent .admin-list-row:last-child{border-bottom:0}
-#pageContent .admin-list-row>b{color:#29252b;font-weight:800;white-space:nowrap}
-@media(max-width:1150px){#pageContent .admin-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}#pageContent .admin-layout{grid-template-columns:minmax(0,1fr)}}
-@media(max-width:760px){#pageContent .admin-kpis{gap:9px}#pageContent .admin-layout{gap:12px}#pageContent .admin-kpis .admin-card{min-height:120px;padding:14px}#pageContent .admin-card>strong{font-size:22px}#pageContent .admin-toolbar .search,#pageContent .toolbar .search{min-width:100%}#pageContent .panel{padding:14px}#pageContent .toolbar>.btn{flex:1}}
+/* Modal form layout and controls: the admin modal uses admin-form-grid/admin-field, not the legacy form-grid/field classes. */
+#modalRoot .modal-backdrop{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding:20px;overflow-y:auto;background:rgba(41,32,43,.48)}
+#modalRoot .modal{display:block;width:min(620px,100%);max-height:calc(100vh - 40px);overflow-y:auto;margin:auto;padding:25px;background:#fff;border:1px solid #eee7e8;border-radius:16px;box-shadow:0 24px 70px rgba(48,32,43,.22)}
+#modalRoot .modal h2{margin:0 0 7px;color:#29252b;font:800 22px/1.3 Manrope,sans-serif}
+#modalRoot .modal>p{margin:0 0 20px;color:#817982;font-size:12px;line-height:1.6}
+#modalRoot .admin-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px 14px;align-items:start}
+#modalRoot .admin-field{display:flex;flex-direction:column;gap:7px;min-width:0;color:#5b525b;font:700 12px/1.4 'DM Sans',sans-serif}
+#modalRoot .admin-field.full{grid-column:1/-1}
+#modalRoot .admin-field input,#modalRoot .admin-field select,#modalRoot .admin-field textarea{display:block;width:100%;min-width:0;min-height:43px;padding:10px 12px;border:1px solid #e5dce0;border-radius:9px;background:#fff;color:#29252b;font:500 14px/1.4 'DM Sans',sans-serif;outline:none;box-shadow:none}
+#modalRoot .admin-field textarea{min-height:100px;resize:vertical}
+#modalRoot .admin-field input:focus,#modalRoot .admin-field select:focus,#modalRoot .admin-field textarea:focus{border-color:#c78a9b;box-shadow:0 0 0 3px #f8e9ed}
+#modalRoot .modal-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:23px;padding-top:16px;border-top:1px solid #f1eaed}
+#modalRoot .modal-actions .btn{min-height:40px;padding:10px 16px;border:1px solid #e8dfe2;border-radius:9px;background:#fff;color:#5b525b;font:700 12px 'DM Sans',sans-serif}
+#modalRoot .modal-actions .btn.primary{background:#8f4e62;border-color:#8f4e62;color:#fff}
+@media(max-width:560px){#modalRoot .modal-backdrop{align-items:flex-start;padding:12px}#modalRoot .modal{max-height:calc(100vh - 24px);padding:19px;border-radius:13px}#modalRoot .admin-form-grid{grid-template-columns:minmax(0,1fr);gap:13px}#modalRoot .admin-field.full{grid-column:auto}#modalRoot .modal-actions{position:sticky;bottom:-19px;background:#fff;padding:14px 0 0}}
