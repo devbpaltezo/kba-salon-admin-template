@@ -1,4 +1,43 @@
-/* Modal form layout and controls: the admin modal uses admin-form-grid/admin-field, not the legacy form-grid/field classes. */
+/* GlowSuite admin modules: shared component styling */
+.admin-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin:0 0 18px;min-width:0}
+.admin-card{display:flex;flex-direction:column;gap:9px;min-width:0;min-height:130px;padding:20px;background:#fff;border:1px solid #eee7e8;border-radius:14px;box-shadow:0 2px 8px rgba(48,32,43,.025)}
+.admin-card>small{color:#817982;font-size:12px;font-weight:600;line-height:1.5}
+.admin-card>strong{color:#29252b;font:800 25px/1.25 Manrope,sans-serif;letter-spacing:-.5px;overflow-wrap:anywhere}
+.admin-card>p{margin:0;color:#817982;font-size:11px;line-height:1.55}
+.admin-card h2,.panel h2{margin:0;color:#29252b;font:800 16px/1.4 Manrope,sans-serif}
+.admin-card .sub{margin:0 0 8px;color:#817982;font-size:12px;line-height:1.5}
+.admin-kpis .admin-card{transition:box-shadow .18s,border-color .18s,transform .18s}
+.admin-kpis .admin-card:hover{border-color:#e8d5dc;box-shadow:0 6px 18px rgba(48,32,43,.06);transform:translateY(-1px)}
+.admin-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 17px}
+.admin-tabs button{appearance:none;border:1px solid #eee7e8;border-radius:9px;background:#fff;color:#817982;padding:10px 14px;font:700 12px 'DM Sans',sans-serif;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.admin-tabs button:hover{border-color:#dcb7c2;color:#8f4e62}
+.admin-tabs button.active{background:#f8e9ed;border-color:#f1dce2;color:#8f4e62}
+.admin-pill{display:inline-flex;align-items:center;justify-content:center;max-width:100%;padding:5px 9px;border-radius:999px;background:#edf6f0;color:#4f8868;font-size:10px;font-weight:800;line-height:1.3;white-space:nowrap}
+.admin-pill.pending{background:#fff4e5;color:#ad7d34}
+.admin-pill.blue{background:#eef1fb;color:#5c6fa8}
+.admin-pill.red{background:#f9e9e9;color:#b35c5c}
+.admin-muted{margin-top:4px;color:#817982;font-size:11px;line-height:1.5}
+.admin-note{margin:0 0 17px;padding:13px 15px;border:1px solid #f0e1c8;border-radius:10px;background:#fff8ec;color:#8c7046;font-size:12px;line-height:1.65}
+.admin-layout{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;margin-bottom:18px;min-width:0}
+.admin-layout>.admin-card{min-height:0}
+.panel{min-width:0;margin-bottom:18px}
+.admin-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:15px}
+.admin-toolbar h2{margin:0;font:800 16px Manrope,sans-serif}
+.admin-inline{display:inline-flex;align-items:center;justify-content:center;gap:5px;padding:6px 8px;border:1px solid transparent;border-radius:7px;background:transparent;color:#8f4e62;font:700 11px 'DM Sans',sans-serif;cursor:pointer;white-space:nowrap}
+.admin-inline:hover{background:#f8e9ed;border-color:#f1dce2}
+.admin-empty{padding:22px 12px;color:#817982;text-align:center;font-size:12px}
+.admin-list{display:grid;gap:0;width:100%;min-width:0}
+.admin-list-row{display:flex;align-items:center;gap:12px;min-width:0;padding:12px 0;border-bottom:1px solid #f1eaed}
+.admin-list-row:last-child{border-bottom:0}
+.admin-list-row>.person-info{flex:1;min-width:0;color:#5b525b;font-size:12px;line-height:1.5}
+.admin-list-row>.person-info b{display:block;color:#39323a;font-size:12px}
+.admin-list-row>.person-info small{display:block;margin-top:3px;color:#817982;font-size:10px}
+.admin-list-row> b{flex:0 0 auto;color:#29252b;font:800 13px Manrope,sans-serif}
+.admin-check{width:16px;height:16px;flex:0 0 auto;accent-color:#8f4e62}
+.payroll-bar{height:7px;overflow:hidden;margin-top:18px;border-radius:99px;background:#f1e9ec}
+.payroll-bar span{display:block;height:100%;border-radius:99px;background:#b46d80}
+.ticket-description{max-width:340px;margin-top:5px;color:#817982;font-size:11px;line-height:1.5;white-space:normal}
+/* Modal form layout and controls */
 #modalRoot .modal-backdrop{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding:20px;overflow-y:auto;background:rgba(41,32,43,.48)}
 #modalRoot .modal{display:block;width:min(620px,100%);max-height:calc(100vh - 40px);overflow-y:auto;margin:auto;padding:25px;background:#fff;border:1px solid #eee7e8;border-radius:16px;box-shadow:0 24px 70px rgba(48,32,43,.22)}
 #modalRoot .modal h2{margin:0 0 7px;color:#29252b;font:800 22px/1.3 Manrope,sans-serif}
@@ -10,6 +49,9 @@
 #modalRoot .admin-field textarea{min-height:100px;resize:vertical}
 #modalRoot .admin-field input:focus,#modalRoot .admin-field select:focus,#modalRoot .admin-field textarea:focus{border-color:#c78a9b;box-shadow:0 0 0 3px #f8e9ed}
 #modalRoot .modal-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:23px;padding-top:16px;border-top:1px solid #f1eaed}
-#modalRoot .modal-actions .btn{min-height:40px;padding:10px 16px;border:1px solid #e8dfe2;border-radius:9px;background:#fff;color:#5b525b;font:700 12px 'DM Sans',sans-serif}
+#modalRoot .modal-actions .btn{min-height:40px;padding:10px 16px;border:1px solid #e8dfe2;border-radius:9px;background:#fff;color:#5b525b;font:700 12px 'DM Sans',sans-serif;cursor:pointer}
 #modalRoot .modal-actions .btn.primary{background:#8f4e62;border-color:#8f4e62;color:#fff}
+#modalRoot .modal-actions .btn:hover{filter:brightness(.98)}
+@media(max-width:1150px){.admin-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.admin-layout{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:760px){.admin-kpis{gap:10px}.admin-card{padding:15px;border-radius:12px}.admin-card>strong{font-size:22px}.admin-tabs button{padding:9px 11px}.admin-toolbar{align-items:flex-start;flex-wrap:wrap}.admin-layout{gap:12px}}
 @media(max-width:560px){#modalRoot .modal-backdrop{align-items:flex-start;padding:12px}#modalRoot .modal{max-height:calc(100vh - 24px);padding:19px;border-radius:13px}#modalRoot .admin-form-grid{grid-template-columns:minmax(0,1fr);gap:13px}#modalRoot .admin-field.full{grid-column:auto}#modalRoot .modal-actions{position:sticky;bottom:-19px;background:#fff;padding:14px 0 0}}
